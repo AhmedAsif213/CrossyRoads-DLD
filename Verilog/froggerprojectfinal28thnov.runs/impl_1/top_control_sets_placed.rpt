@@ -1,0 +1,97 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
+| Date         : Thu Nov 28 14:53:03 2024
+| Host         : HU-DOPX-DIL03 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
+| Design       : top
+| Device       : xc7a35t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    19 |
+|    Minimum number of control sets                        |    19 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    79 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    19 |
+| >= 0 to < 4        |     1 |
+| >= 4 to < 6        |     5 |
+| >= 6 to < 8        |     3 |
+| >= 8 to < 10       |     3 |
+| >= 10 to < 12      |     2 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     5 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              50 |           29 |
+| No           | No                    | Yes                    |              76 |           33 |
+| No           | Yes                   | No                     |               2 |            1 |
+| Yes          | No                    | No                     |             127 |           49 |
+| Yes          | No                    | Yes                    |              46 |           23 |
+| Yes          | Yes                   | No                     |               4 |            2 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------------------------------+--------------------+----------------------+------------------+----------------+--------------+
+|             Clock Signal             |    Enable Signal   |   Set/Reset Signal   | Slice Load Count | Bel Load Count | Bels / Slice |
++--------------------------------------+--------------------+----------------------+------------------+----------------+--------------+
+|  reset_state_BUFG                    |                    | frog/is_win_reg_0    |                1 |              2 |         2.00 |
+|  bin/r_1Hz                           | bin/seconds_ctr2   | reset_state_BUFG     |                1 |              4 |         4.00 |
+|  bin/r_1Hz                           | bin/seconds_ctr2   | frog/is_win_reg_0    |                1 |              4 |         4.00 |
+|  clk_100MHz_IBUF_BUFG                | vga/p_tick         | vga/r_25MHz_reg[0]_0 |                2 |              4 |         2.00 |
+|  bin/r_1Hz                           | bin/hours_ctr      | reset_state_BUFG     |                3 |              5 |         1.67 |
+|  bin/r_1Hz                           | bin/hours_ctr      | frog/is_win_reg_0    |                2 |              5 |         2.50 |
+|  clk_100MHz_IBUF_BUFG                | vga/p_tick         |                      |                4 |              6 |         1.50 |
+|  pclk/cdr/data_reg[7]_i_1_n_0        |                    |                      |                3 |              7 |         2.33 |
+|  pclkBest/cdr/data_reg[7]_i_1__0_n_0 |                    |                      |                2 |              7 |         3.50 |
+|  bin/r_1Hz                           |                    | frog/ctr_1Hz0        |                4 |              9 |         2.25 |
+|  clk_100MHz_IBUF_BUFG                | frog/frog_x        | reset_state_BUFG     |                5 |              9 |         1.80 |
+|  clk_100MHz_IBUF_BUFG                | frog/frog_y        | reset_state_BUFG     |                7 |              9 |         1.29 |
+|  vga/p_tick                          |                    | reset_state_BUFG     |                7 |             10 |         1.43 |
+|  vga/p_tick                          | vga/v_count_next_1 | reset_state_BUFG     |                4 |             10 |         2.50 |
+|  frog/is_win                         | is_best_score      |                      |                9 |             21 |         2.33 |
+|  clk_100MHz_IBUF_BUFG                |                    | reset_state_BUFG     |               13 |             25 |         1.92 |
+|  clk_100MHz_IBUF_BUFG                |                    | frog/ctr_1Hz0        |                9 |             32 |         3.56 |
+|  clk_100MHz_IBUF_BUFG                |                    |                      |               24 |             36 |         1.50 |
+|  clk_100MHz_IBUF_BUFG                | vga/obstacle_X     |                      |               36 |            100 |         2.78 |
++--------------------------------------+--------------------+----------------------+------------------+----------------+--------------+
+
+
